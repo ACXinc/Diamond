@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Company - Bank System</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>💎 Diamond Company Bank System</h1>
+  </header>
+
+  <div class="container" id="welcome">
+    <h2>Welcome</h2>
+    <p>Join our banking system and manage your account online.</p>
+    <label>Already have an account?</label>
+    <a href="/login"><button>Login</button></a>
+    <label>New here?</label>
+    <a href="/create"><button>Create Account</button></a>
+  </div>
+
+  <div class="container" id="create-account" style="display: none;">
+    <h2>Create Bank Account</h2>
+    <form method="POST" action="/create">
+      <input name="username" type="text" placeholder="Bank Account Username" required>
+      <input name="password" type="password" placeholder="Password" required>
+      <input name="phone" type="text" placeholder="Phone Number (optional)">
+      <button type="submit">Create Account</button>
+    </form>
+  </div>
+
+  <div class="container" id="login-page" style="display: none;">
+    <h2>Login</h2>
+    <form method="POST" action="/login">
+      <input name="username" type="text" placeholder="Username" required>
+      <input name="password" type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div class="container" id="home-page" style="display: none;">
+    <h2>Main Home Page</h2>
+    <div class="home-options">
+      <a href="mailto:chebbiadem454@gmail.com"><button>Contact Us</button></a>
+      <a href="/deposit"><button>Deposit Money</button></a>
+      <a href="/withdraw"><button>Withdraw Money</button></a>
+      <a href="/transcript"><button>View Transcript</button></a>
+      <a href="/balance"><button>Check Balance</button></a>
+      <div class="loan-request">
+        <h3>Loan Request</h3>
+        <p>Loan interest: 10% - Requires Admin Approval</p>
+        <a href="/loan"><button>Request Loan</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="admin-panel" style="display: none;">
+    <h2>Admin Panel (CEO Access)</h2>
+    <a href="/admin/approve"><button>Approve Loans</button></a>
+    <a href="/admin/accounts"><button>View All Accounts</button></a>
+    <a href="/admin/delete"><button>Delete Account</button></a>
+    <a href="/admin/create"><button>Create New Account</button></a>
+  </div>
+
+  <div class="container" id="blocked-account" style="display: none;">
+    <h2>Create a Blocked Account</h2>
+    <form method="POST" action="/blocked">
+      <input name="holder" type="text" placeholder="Account Holder Name" required>
+      <input name="amount" type="number" placeholder="Initial Deposit" required>
+      <button type="submit">Create Blocked Account</button>
+    </form>
+  </div>
+</body>
+</html>
